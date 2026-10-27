@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../clientes/clientes_page.dart';
 import '../dashboard/dashboard_page.dart';
 import '../leads/leads_page.dart';
+import '../prompt/prompt_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -19,7 +20,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: IndexedStack(
         index: _aba,
-        children: const [DashboardPage(), ClientesPage(), LeadsPage()],
+        children: const [
+          DashboardPage(),
+          ClientesPage(),
+          LeadsPage(),
+          PromptPage(),
+        ],
       ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _aba,
@@ -39,6 +45,11 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Icons.person_search_outlined),
             selectedIcon: Icon(Icons.person_search),
             label: 'Leads',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.smart_toy_outlined),
+            selectedIcon: Icon(Icons.smart_toy),
+            label: 'Prompt',
           ),
         ],
       ),
