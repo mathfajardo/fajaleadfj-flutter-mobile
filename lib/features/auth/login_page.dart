@@ -5,7 +5,7 @@ import '../../core/api/api.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/widgets/mensagem.dart';
 import '../../core/widgets/primary_button.dart';
-import '../clientes/clientes_page.dart';
+import '../home/home_page.dart';
 
 void irParaLogin(BuildContext context) {
   Navigator.of(context).pushAndRemoveUntil(
@@ -45,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
       await Api.login(_email.text.trim(), _password.text);
       if (!mounted) return;
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const ClientesPage()),
+        MaterialPageRoute(builder: (_) => const HomePage()),
       );
     } catch (_) {
       if (!mounted) return;
