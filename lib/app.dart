@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'core/api/api.dart';
 import 'core/theme/app_theme.dart';
 import 'features/auth/login_page.dart';
-import 'features/clientes/clientes_page.dart';
+import 'features/home/home_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -41,7 +41,7 @@ class _InicioState extends State<_Inicio> {
             ),
           );
         }
-        return snapshot.data! ? const ClientesPage() : const LoginPage();
+        return snapshot.data! ? const HomePage() : const LoginPage();
       },
     );
   }

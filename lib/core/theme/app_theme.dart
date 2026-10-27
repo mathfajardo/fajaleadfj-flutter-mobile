@@ -61,6 +61,27 @@ abstract final class AppTheme {
         foregroundColor: Colors.white,
       ),
       dividerTheme: const DividerThemeData(color: AppColors.border, space: 1),
+      navigationBarTheme: NavigationBarThemeData(
+        backgroundColor: AppColors.background,
+        surfaceTintColor: Colors.transparent,
+        indicatorColor: AppColors.primaryLight,
+        iconTheme: WidgetStateProperty.resolveWith(
+          (states) => IconThemeData(
+            color: states.contains(WidgetState.selected)
+                ? AppColors.primaryDark
+                : AppColors.muted,
+          ),
+        ),
+        labelTextStyle: WidgetStateProperty.resolveWith(
+          (states) => TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w600,
+            color: states.contains(WidgetState.selected)
+                ? AppColors.primaryDark
+                : AppColors.muted,
+          ),
+        ),
+      ),
       snackBarTheme: const SnackBarThemeData(
         behavior: SnackBarBehavior.floating,
       ),
